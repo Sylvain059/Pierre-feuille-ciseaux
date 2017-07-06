@@ -33,16 +33,15 @@ while (pointJoueur < 3 && pointOrdi < 3) {
         console.log("Entre une réponse, correct");
     }
 
+    document.getElementById('userScore').innerHTML = pointJoueur;
+    document.getElementById('computerScore').innerHTML = pointOrdi;
 
-    console.log("User" + " " + pointJoueur);
-    console.log("Ordi" + " " + pointOrdi);
-    console.log("");
 }
 
 if (pointJoueur === 3) {
-    alert.log("Bien joué, c'est une victoire pour toi");
+    alert("Bien joué, c'est une victoire pour toi");
 } else {
-    alert.log("LOOSER! je t'ai eu!!!");
+    alert("LOOSER! je t'ai eu!!!");
 }
 
 
