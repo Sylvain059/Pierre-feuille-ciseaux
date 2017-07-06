@@ -5,14 +5,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pierre, feuille, ciseaux.</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-<h1>Pierre, Feuille, Ciseaux</h1>
-<p>On joue au pierre, feuille, ciseaux dans la console</p>
-<p>ctrl + maj + i</p>
-<p>Recharge la page si tu veux rejouer (F5)</p>
 
-<body>
+<body class="container-fluid">
+    <div class="jumbotron">
+        <section class="container">
+            <h1>Pierre, Feuille, Ciseaux</h1>
+            <p>On joue au pierre, feuille, ciseaux.</p>
+        </section>
+    </div>
+
+    <main class="container-fluid">
+
+        <h2>Utilisateur : <span id="pseudo"></span></h2>
+
+        <figure class="">
+            <img class="img-thumbnail" src="img/pierre.jpg" alt="pierre">
+            <img class="img-thumbnail" src="img/feuille.jpg" alt="feuille">
+            <img class="img-thumbnail" src="img/ciseaux.jpg" alt="ciseaux">
+        </figure>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <h2>Ordinateur</h2>
+        <figure class="col-offset-3">
+            <img class="img-thumbnail" src="img/pierre.jpg" alt="pierre">
+            <img class="img-thumbnail" src="img/feuille.jpg" alt="feuille">
+            <img class="img-thumbnail" src="img/ciseaux.jpg" alt="ciseaux">
+        </figure>
+
+        <section class="score">
+            <h2>Score</h2>
+            <p>Utisateur : <span class="userScore"></span>/ <span class="computerScore"> </span> : Ordinateur</p>
+
+        </section>
+    </main>
+
     <script src="js/main.js"></script>
 </body>
 
