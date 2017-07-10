@@ -1,36 +1,71 @@
+var choixUtilisateur;
+var choixOrdi;
 var pointJoueur = 0;
 var pointOrdi = 0;
+var pseudo;
 
-var pseudo = prompt('Quelle est ton pseudo?');
+
+
+pseudo = prompt('Quelle est ton pseudo?');
 document.getElementById('pseudo').innerHTML = pseudo;
 
+//Boucle pour relancer les manche tant qu'aucun joueur n'a atteind le score de 3.
 
 while (pointJoueur < 3 && pointOrdi < 3) {
-    var choixUtilisateur = prompt("On va jouer au pierre, feuille, ciseaux. Choisi l'un des trois!");
-    var choixOrdi = Math.random();
-    if (choixOrdi < 0.34) {
-        choixOrdi = "pierre";
-    } else if (choixOrdi <= 0.67) {
-        choixOrdi = "feuille";
-    } else {
-        choixOrdi = "ciseaux";
+
+    document.getElementById('pierre').addEventListener('click', pierreFunction);
+    document.getElementById('feuille').addEventListener('click', feuilleFunction);
+    document.getElementById('ciseaux').addEventListener('click', ciseauxFunction);
+
+    function pierreFunction() {
+        choixUtilisateur = document.getElementById('pierre').id;
+        document.getElementById('userArene').innerHTML = choixUtilisateur;
     }
 
-    console.log("User" + ":" + " " + choixUtilisateur + " " + "/" + " " + "Ordi" + ":" + " " + choixOrdi);
+    function feuilleFunction() {
+        choixUtilisateur = document.getElementById('feuille').id;
+        document.getElementById('userArene').innerHTML = choixUtilisateur;
+    }
 
-    if (choixUtilisateur == "pierre" && choixOrdi == "ciseaux" || choixUtilisateur == "feuille" && choixOrdi == "pierre" || choixUtilisateur == "ciseaux" && choixOrdi == "feuille") {
+    function ciseauxFunction() {
+        choixUtilisateur = document.getElementById('ciseaux').id;
+        document.getElementById('userArene').innerHTML = choixUtilisateur;
+    }
+    console.log(choixUtilisateur);
+
+
+    //Système de ramdom pour attribuer un choix aléatoire à l'ordinateur.
+
+    choixOrdi = Math.random();
+    if (choixOrdi < 0.34) {
+        choixOrdi = "pierre";
+        document.getElementById('compArene').innerHTML = choixOrdi;
+    } else if (choixOrdi <= 0.67) {
+        choixOrdi = "feuille";
+        document.getElementById('compArene').innerHTML = choixOrdi;
+    } else {
+        choixOrdi = "ciseaux";
+        document.getElementById('compArene').innerHTML = choixOrdi;
+    }
+    console.log(choixOrdi);
+
+
+    //Système de comparaison pour savoir qui gagne la manche.
+    //Condition pour savoir si le joueur à gagner.
+    if (choixUtilisateur === "pierre" && choixOrdi === "ciseaux" || choixUtilisateur === "feuille" && choixOrdi === "pierre" || choixUtilisateur === "ciseaux" && choixOrdi === "feuille") {
         console.log("Tu as de la chance je t'ai laissé gagner!");
         pointJoueur++;
-    } else if (choixUtilisateur === null) {
-        console.log("Espèce de lâche, tu viens d'abandonner!!");
-        break;
-    } else if (choixUtilisateur == "pierre" && choixOrdi == "pierre" || choixUtilisateur == "feuille" && choixOrdi == "feuille" || choixUtilisateur == "ciseaux" && choixOrdi == "ciseaux") {
+    }
+
+    //Comparaison pour savoir quand il y a match nul.
+    else if (choixUtilisateur === choixOrdi) {
         console.log("Match nul, personne ne gagne!");
-    } else if (choixUtilisateur == "ciseaux" && choixOrdi == "pierre" || choixUtilisateur == "pierre" && choixOrdi == "feuille" || choixUtilisateur == "feuille" && choixOrdi == "ciseaux") {
+    }
+
+    //Comparaison pour savoir quand le joueur perd.
+    else {
         console.log("Tu as perdu, c'est moi qui gagne!!!");
         pointOrdi++;
-    } else if (choixUtilisateur === "" || choixUtilisateur !== "pierre" || choixUtilisateur !== "feuille" || choixUtilisateur !== "ciseaux") {
-        console.log("Entre une réponse, correct");
     }
 
     document.getElementById('userScore').innerHTML = pointJoueur;
@@ -38,14 +73,10 @@ while (pointJoueur < 3 && pointOrdi < 3) {
 
 }
 
+
+
 if (pointJoueur === 3) {
     alert("Bien joué, c'est une victoire pour toi");
 } else {
     alert("LOOSER! je t'ai eu!!!");
 }
-
-
-
-//Tant que user ne gagne pas 3 fois OU ordi ne gagne pas 3 fois
-//Relance le jeu
-//
