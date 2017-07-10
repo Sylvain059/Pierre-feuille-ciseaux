@@ -32,7 +32,8 @@ while (pointJoueur < 3 && pointOrdi < 3) {
         choixUtilisateur = "ciseaux" //document.getElementById('ciseaux').id;
         document.getElementById('userArene').innerHTML = choixUtilisateur;
     }
-    console.log(choixUtilisateur);
+
+
 
 
     //Système de ramdom pour attribuer un choix aléatoire à l'ordinateur.
@@ -54,18 +55,18 @@ while (pointJoueur < 3 && pointOrdi < 3) {
     //Système de comparaison pour savoir qui gagne la manche.
     //Condition pour savoir si le joueur à gagner.
     if (choixUtilisateur === "pierre" && choixOrdi === "ciseaux" || choixUtilisateur === "feuille" && choixOrdi === "pierre" || choixUtilisateur === "ciseaux" && choixOrdi === "feuille") {
-        console.log("Tu as de la chance je t'ai laissé gagner!");
+        document.getElementById('resultat').innerHTML = "Tu as de la chance je t'ai laissé gagner!";
         pointJoueur++;
     }
 
     //Comparaison pour savoir quand il y a match nul.
     else if (choixUtilisateur === choixOrdi) {
-        console.log("Match nul, personne ne gagne!");
+        document.getElementById('resultat').innerHTML = "Match nul, personne ne gagne!";
     }
 
     //Comparaison pour savoir quand le joueur perd.
     else {
-
+        document.getElementById('resultat').innerHTML = "Je t'ai eu c'est moi qui gagne!!!";
         pointOrdi++;
     }
 
@@ -76,8 +77,8 @@ while (pointJoueur < 3 && pointOrdi < 3) {
 
 
 
-if (pointJoueur === 3) {
-    alert("Bien joué, c'est une victoire pour toi");
+/*if (pointJoueur === 3) {
+    document.getElementById('resultat').innerHTML = "Bien joué, c'est une victoire pour toi";
 } else {
-    alert("LOOSER! je t'ai eu!!!");
-}
+    document.getElementById('resultat').innerHTML = "LOOSER! je t'ai eu!!!";
+}*/
