@@ -18,8 +18,7 @@ while (pointJoueur < 3 && pointOrdi < 3) {
     document.getElementById('ciseaux').addEventListener('click', ciseauxFunction);
 
     function pierreFunction() {
-        choixUtilisateur = "pierre";
-        //document.getElementById('pierre').id;
+        choixUtilisateur = "pierre"; //document.getElementById('pierre').id;
         document.getElementById('userArene').innerHTML = choixUtilisateur;
     }
 
@@ -77,8 +76,8 @@ while (pointJoueur < 3 && pointOrdi < 3) {
 
 
 
-/*if (pointJoueur === 3) {
+if (pointJoueur === 3) {
     document.getElementById('resultat').innerHTML = "Bien joué, c'est une victoire pour toi";
 } else {
     document.getElementById('resultat').innerHTML = "LOOSER! je t'ai eu!!!";
-}*/
+}
