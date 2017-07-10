@@ -18,17 +18,18 @@ while (pointJoueur < 3 && pointOrdi < 3) {
     document.getElementById('ciseaux').addEventListener('click', ciseauxFunction);
 
     function pierreFunction() {
-        choixUtilisateur = document.getElementById('pierre').id;
+        choixUtilisateur = "pierre";
+        //document.getElementById('pierre').id;
         document.getElementById('userArene').innerHTML = choixUtilisateur;
     }
 
     function feuilleFunction() {
-        choixUtilisateur = document.getElementById('feuille').id;
+        choixUtilisateur = "feuille" //document.getElementById('feuille').id;
         document.getElementById('userArene').innerHTML = choixUtilisateur;
     }
 
     function ciseauxFunction() {
-        choixUtilisateur = document.getElementById('ciseaux').id;
+        choixUtilisateur = "ciseaux" //document.getElementById('ciseaux').id;
         document.getElementById('userArene').innerHTML = choixUtilisateur;
     }
     console.log(choixUtilisateur);
@@ -64,7 +65,7 @@ while (pointJoueur < 3 && pointOrdi < 3) {
 
     //Comparaison pour savoir quand le joueur perd.
     else {
-        console.log("Tu as perdu, c'est moi qui gagne!!!");
+
         pointOrdi++;
     }
 
