@@ -6,56 +6,57 @@ var pointOrdi = 0;
 
 
 
-//pseudo = prompt('Quelle est ton pseudo?');
-//document.getElementById('pseudo').innerHTML = pseudo;
+pseudo = prompt('Quelle est ton pseudo?');
+document.getElementById('pseudo').innerHTML = pseudo;
+
+
+
+// Fonction Pour savoir le choix de l'utilisateur.
+function pierreFunction() {
+	choixUtilisateur = document.getElementById('pierre').id;
+	document.getElementById('userArene').innerHTML = choixUtilisateur;
+}
+
+function feuilleFunction() {
+	choixUtilisateur = document.getElementById('feuille').id;
+	document.getElementById('userArene').innerHTML = choixUtilisateur;
+}
+
+function ciseauxFunction() {
+	choixUtilisateur = document.getElementById('ciseaux').id;
+	document.getElementById('userArene').innerHTML = choixUtilisateur;
+}
 
 //Boucle pour relancer les manche tant qu'aucun joueur n'a atteind le score de 3.
-
 while (pointJoueur < 3 && pointOrdi < 3) {
 
-	function pierreFunction() {
-		choixUtilisateur = 'pierre'; //document.getElementById('pierre').id;
-		document.getElementById('userArene').innerHTML = choixUtilisateur;
-	}
-
-	function feuilleFunction() {
-		choixUtilisateur = 'feuille'; //document.getElementById('feuille').id;
-		document.getElementById('userArene').innerHTML = choixUtilisateur;
-	}
-
-	function ciseauxFunction() {
-		choixUtilisateur = 'ciseaux'; //document.getElementById('ciseaux').id;
-		document.getElementById('userArene').innerHTML = choixUtilisateur;
-	}
-
-	document.getElementById('pierre').addEventListener('click', pierreFunction);
-	document.getElementById('feuille').addEventListener('click', feuilleFunction);
-	document.getElementById('ciseaux').addEventListener('click', ciseauxFunction);
+	document.getElementById('pierre').addEventListener('click', pierreFunction());
+	document.getElementById('feuille').addEventListener('click', feuilleFunction());
+	document.getElementById('ciseaux').addEventListener('click', ciseauxFunction());
 
 	console.log(choixUtilisateur);
-
 
 
 	//Système de ramdom pour attribuer un choix aléatoire à l'ordinateur.
 
 	choixOrdi = Math.random();
 	if (choixOrdi < 0.34) {
-		choixOrdi = "pierre";
+		choixOrdi = 'pierre';
 		document.getElementById('compArene').innerHTML = choixOrdi;
 	} else if (choixOrdi <= 0.67) {
-		choixOrdi = "feuille";
+		choixOrdi = 'feuille';
 		document.getElementById('compArene').innerHTML = choixOrdi;
 	} else {
-		choixOrdi = "ciseaux";
+		choixOrdi = 'ciseaux';
 		document.getElementById('compArene').innerHTML = choixOrdi;
 	}
-	console.log(choixOrdi);
+
 
 
 	//Système de comparaison pour savoir qui gagne la manche.
 
 	//Condition pour savoir si le joueur à gagner.
-	if (choixUtilisateur === "pierre" && choixOrdi === "ciseaux" || choixUtilisateur === "feuille" && choixOrdi === "pierre" || choixUtilisateur === "ciseaux" && choixOrdi === "feuille") {
+	if (choixUtilisateur === 'pierre' && choixOrdi === 'ciseaux' || choixUtilisateur === 'feuille' && choixOrdi === 'pierre' || choixUtilisateur === 'ciseaux' && choixOrdi === 'feuille') {
 		document.getElementById('resultat').innerHTML = "Tu as de la chance je t'ai laissé gagner!";
 		pointJoueur++; //incrémentation des points. 
 	}
