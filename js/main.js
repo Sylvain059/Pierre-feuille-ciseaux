@@ -33,7 +33,6 @@ while (pointJoueur < 3 && pointOrdi < 3) {
 	document.getElementById('pierre').addEventListener('click', pierreFunction());
 	document.getElementById('feuille').addEventListener('click', feuilleFunction());
 	document.getElementById('ciseaux').addEventListener('click', ciseauxFunction());
-
 	console.log(choixUtilisateur);
 
 
@@ -58,7 +57,8 @@ while (pointJoueur < 3 && pointOrdi < 3) {
 	//Condition pour savoir si le joueur à gagner.
 	if (choixUtilisateur === 'pierre' && choixOrdi === 'ciseaux' || choixUtilisateur === 'feuille' && choixOrdi === 'pierre' || choixUtilisateur === 'ciseaux' && choixOrdi === 'feuille') {
 		document.getElementById('resultat').innerHTML = "Tu as de la chance je t'ai laissé gagner!";
-		pointJoueur++; //incrémentation des points. 
+		pointJoueur++;
+		//incrémentation des points. 
 	}
 
 	//Comparaison pour savoir quand il y a match nul.
@@ -69,7 +69,8 @@ while (pointJoueur < 3 && pointOrdi < 3) {
 	//Comparaison pour savoir quand le joueur perd.
 	else {
 		document.getElementById('resultat').innerHTML = "Je t'ai eu c'est moi qui gagne!!!";
-		pointOrdi++; //incrémentation des points.
+		pointOrdi++;
+		//incrémentation des points.
 	}
 
 	document.getElementById('userScore').innerHTML = pointJoueur;
